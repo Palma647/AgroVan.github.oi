@@ -1,0 +1,157 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f4f4f4;  
+        }  
+        header {  
+            background: #3b8122;  
+            color: white;  
+            padding: 10px 0;  
+            text-align:;  
+        }  
+        nav {  
+            margin: 10px 0;  
+        }  
+        nav a {  
+            color: white;  
+            margin: 0 15px;  
+            text-decoration: none;  
+            padding: 10px;  
+            border-radius: 50px; /* Ovalo */  
+            transition: background-color 0.3s; /* Suaviza el cambio de color */  
+        }  
+        nav a.active {  
+            background-color: #a8e6cf; /* Color verde claro */  
+            color: black; /* Color del texto */  
+        }  
+        section {  
+            padding: 20px;  
+            background: white;  
+            margin: 10px;  
+            border-radius: 5px;  
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);  
+        }  
+        footer {  
+            text-align: center;  
+            padding: 10px 0;  
+            background: #3b8122;  
+            color: white;  
+            position: relative;  
+            bottom: 0;  
+            width: 100%;  
+        }  
+        .form-group {  
+            margin-bottom: 15px;  
+        }  
+        label {  
+            display: block;  
+            margin-bottom: 5px;  
+        }  
+        input, textarea {  
+            width: 100%;  
+            padding: 10px;  
+            border-radius: 5px;  
+            border: 1px solid #ccc;  
+        }  
+        .button {  
+            background-color: #3b8122;  
+            color: white;  
+            padding: 10px 15px;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+        }  
+        .highlight {  
+            color: #3b8122;  
+            font-weight: bold;  
+        }  
+        .logo {  
+            width: 100px;  
+            height: auto;  
+            margin: 10px 0 10px 0; /* Ajustar margen superior */  
+            border-radius: 10px;  
+        }  
+        h1 {  
+            margin-top: -10px; /* Ajuste para mover el título más arriba */  
+        }  
+    </style>  
+    <title>Contacto - Agrocomercial</title>  
+</head>  
+<body>  
+
+<header>  
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+ &nbsp;&nbsp;<img src="Imagenes/Logo.jpg" alt="Logo Agrocomercial" class="logo" style="margin-right: auto;" align="middle">
+        <h1 style="flex: 1; text-align: center; margin: 0;"><center>Contacto</center></h1>
+    </div> 
+    <nav>  
+        <a href="inicio.html">Inicio</a>  
+        <a href="productos.html">Productos</a>  
+        <a href="maquinaria.html">Maquinaria Agrícola</a>  
+        <a href="servicios.html">Servicios</a>  
+        <a href="contacto.html" class="active">Contacto</a>  
+    </nav>  
+</header>  
+
+<section>  
+    <h2>Contáctanos</h2>  
+    <p>Si tienes alguna pregunta o necesitas más información sobre nuestros productos y servicios, no dudes en rellenar el siguiente formulario o contactarnos directamente.</p>  
+
+    <h3>Formulario de Contacto</h3>  
+    <form action="enviar_contacto.php" method="post">  
+        <div class="form-group">  
+            <label for="nombre">Nombre Completo:</label>  
+            <input type="text" id="nombre" name="nombre" required>  
+        </div>  
+        <div class="form-group">  
+            <label for="apellido">Apellido Completo:</label>  
+            <input type="text" id="apellido" name="apellido" required>  
+        </div>  
+        <div class="form-group">  
+            <label for="email">Correo Electrónico:</label>  
+            <input type="email" id="email" name="email" required>  
+        </div>  
+        <div class="form-group">  
+            <label for="mensaje">Mensaje:</label>  
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>  
+        </div>  
+        <button type="submit" class="button">Enviar</button>  
+    </form>  
+
+    <h3>Información de Contacto</h3>  
+    <p><strong>Teléfono:</strong> +504 9497-7233</p>  
+    <p><strong>Email:</strong>agrocomercialvangromis@gmail.com</p>  
+    <p><strong>Dirección:</strong>Saba,Colon,Honduras<br>En direccion a carretera. Saba-Yoro al frente de Vidrieria Leo</p>  
+    
+   <h3>Nuestras Redes Sociales</h3>
+    <p>Síguenos en nuestras redes sociales para estar al tanto de nuestras novedades:</p>
+    <p>  
+        <a href="https://www.facebook.com/agrocomercialvangromis" target="_blank">Facebook</a> |  
+        <a href="https://www.instagram.com/agrocomercialvangromis" target="_blank">Instagram</a> |  
+        <a href="https://wa.me/50494977233" target="_blank">WhatsApp</a>  
+    </p>
+
+    <h3>Ubicación</h3>  
+    <p>Encuentra nuestra ubicación en el siguiente mapa:</p>  
+    <iframe  
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1642743.4954968683!2d-87.79811774770852!3d15.866509724280619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f35e028bcb9b7b9%3A0xd0c43b7a535c1cc9!2sSaba%2C%20Col%C3%B3n%2C%20Honduras!5e0!3m2!1ses!2ses!4v1635819529034!5m2!1ses!2ses"  
+        width="100%"  
+        height="300"  
+        style="border:0;"  
+        allowfullscreen=""  
+        loading="lazy"></iframe>  
+</section>  
+
+<footer>  
+    <p>&copy; 2024 Agrocomercial Vangromi´S.</p>  
+</footer>  
+
+</body>  
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>  
+<html lang="es"><head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Agrocomercial Vangromi´S</title>  
+   
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    header {
+        background: #3b8122;
+        color: white;
+        display: flex;
+        align-items:
+        justify-content: space-between;
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+    
+    h1 {
+        margin: 0;
+    }
+    
+    .logo {
+        width: 100px;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 10px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+    
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 50px;
+        transition: background-color 0.3s;
+    }
+
+    nav a.active {
+        background-color: #a8e6cf;
+        color: black;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    section {
+        padding: 20px;
+        background: white;
+        margin: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        background: #3b8122;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .button {
+        background-color: #3b8122;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    
+    .highlight {
+        color: #3b8122;
+        font-weight: bold;
+    }
+
+    /* Estilo de la ventana emergente */
+    .popup {
+        display: none; /* Oculta por defecto */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    }
+
+    .popup-overlay {
+        display: none; /* Oculta por defecto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999; /* Justo detrás de la ventana emergente */
+    }
+
+    #redes-sociales img {
+        transition: transform 0.3s;
+        margin-left: 10px; /* Espacio entre los íconos */
+    }
+
+    #redes-sociales img:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+<script>
+    function togglePopup() {
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('popup-overlay');
+        const isHidden = popup.style.display === 'none' || popup.style.display === '';
+        
+        popup.style.display = isHidden ? 'block' : 'none';
+        overlay.style.display = isHidden ? 'block' : 'none';
+    }
+</script>
+ 
+</head>  
+<body>  
+<header>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        <img src="Imagenes/Logo.jpg" alt="Logo Agrocomercial" class="logo" style="margin-right: auto;">
+        <h1 style="flex: 1; text-align: center; margin: 0;">Agrocomercial Vangromi´S</h1>
+        <button onclick="togglePopup()" style="background: none; border: none; color: white; cursor: pointer;">Síguenos</button>
+    </div>
+    <nav style="text-align: left; margin-top: 10px;">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="maquinaria.html">Maquinaria Agrícola</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+</header>
+
+<div class="container">
+    <section id="inicio">  
+        <h2>Bienvenidos a Agrocomercial Vangromi´S</h2>
+        <center><img src="Imagenes/LOGO DE PRESENTACION COPIA.jpg" alt="Cultivos saludables" width="752" height="336"></center>
+        <p>En Agrocomercial Vangromi´S, nos dedicamos a ofrecer productos agrícolas de calidad superior a precios competitivos. Nuestra pasión por la agricultura nos impulsa a brindar un servicio excepcional y productos que realmente marcan la diferencia.</p>
+        <p><strong>Nuestra Misión:</strong> Apoyar a los agricultores y a la comunidad con insumos de alta calidad.</p>
+        <p><strong>Nuestra Visión:</strong> Ser líderes en el sector agrícola, promoviendo la sostenibilidad y el desarrollo rural.</p>
+        <img src="URL_DE_IMAGEN_DE_PRODUCCION" alt="Producción agrícola" width="102%" height="113">
+        <p>Juntos, cultivemos un futuro mejor. Explora nuestras secciones de productos y servicios para conocer más sobre cómo podemos ayudarte a alcanzar tus metas agrícolas.</p>
+        <a href="productos.html" class="button">Descubre Nuestros Productos</a>
+    </section> 
+
+    <section id="productos">  
+        <h2>Lo que nosotros ofrecemos</h2>  
+        <ul>  
+            <li><strong>Fertilizantes:</strong> Amplia gama de fertilizantes orgánicos y químicos que mejoran la salud de tus cultivos y garantizan un rendimiento óptimo.</li>  
+            <li><strong>Semillas:</strong> Semillas de alta calidad, adaptadas a diferentes climas y tipos de suelo.</li>  
+            <li><strong>Herramientas agrícolas:</strong> Herramientas y maquinaria de última tecnología que facilitan el trabajo en el campo.</li>  
+        </ul>
+    </section> 
+
+    <section id="contacto" class="section">
+        <h2>¿Tienes Preguntas?</h2>
+        <p>Contáctanos y descubre cómo podemos ayudarte a hacer crecer tu negocio agrícola. Nuestro equipo está listo para brindarte el mejor soporte.</p>
+        <p class="highlight">¡Tu éxito es nuestro compromiso!</p>
+        <a href="contacto.html" class="button">Contáctanos</a>
+    </section>
+</div>
+
+<div id="popup-overlay" class="popup-overlay" onclick="togglePopup()"></div>
+<div id="popup" class="popup">
+    <h2>Síguenos en Redes Sociales</h2>
+    <div id="redes-sociales">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="Imagenes/Facebook.jpg" width="100" height="100">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="Imagenes/Instagram.jpg" width="100" height="100">
+        </a>
+        <a href="https://wa.me/50496709612" target="_blank">
+    <img src="Imagenes/WhatsApp.jpg" width="100" height="100">
+      </a>
+
+    </div>
+    <button onclick="togglePopup()" style="margin-top: 10px;">Cerrar</button>
+</div>
+
+<footer>  
+    <p>&copy; 2024 Agrocomercial Vangromi´S.</p>  
+</footer>  
+
+</body>  
+</html>

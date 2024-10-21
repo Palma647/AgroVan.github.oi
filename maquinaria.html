@@ -1,0 +1,168 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Maquinaria Agrícola - Agrocomercial</title>  
+    <link rel="stylesheet" href="styles.css">  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f4f4f4;  
+        }  
+        header {  
+            background: #3b8122;  
+            color: white;  
+            padding: 10px 0;  
+            text-align:;  
+        }  
+        .logo {
+            width: 100px; /* Ajusta el tamaño según sea necesario */
+            height: auto; /* Mantiene la proporción */
+            margin: 20px 0; /* Aumentar el espaciado arriba y abajo */
+            border-radius: 10px; /* Redondear las esquinas */
+        }
+        nav {  
+            margin: 10px 0;  
+        }
+        nav a {  
+            color: white;  
+            margin: 0 15px;  
+            text-decoration: none;  
+            padding: 10px;  
+            border-radius: 50px;  
+            transition: background-color 0.3s;  
+        }  
+        nav a.active {  
+            background-color: #a8e6cf;  
+            color: black;  
+        }  
+        section {  
+            padding: 20px;  
+            background: white;  
+            margin: 10px;  
+            border-radius: 5px;  
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+            display: flex;  
+            flex-wrap: wrap;  
+            justify-content: space-between; /* Espaciado entre productos */
+        }  
+        .product {  
+            flex: 0 1 calc(30% - 20px); /* Tres productos por fila */
+            margin: 10px;  
+            text-align: center;  
+            border: 1px solid #ddd;  
+            border-radius: 5px;  
+            padding: 10px;  
+            background: white;  
+            box-sizing: border-box; /* Asegura que el padding y border estén incluidos en el tamaño total */
+            display: flex;  
+            flex-direction: column;  
+            justify-content: space-between; /* Asegura que el contenido se distribuya uniformemente */
+        }  
+        .product img {
+            width: 70%; /* Imagen ocupa el 70% del ancho del producto */
+            height: 120px; /* Altura ajustada para uniformidad */
+            border-radius: 5px;
+            margin: 10px auto; /* Centra la imagen y da un margen */
+        }
+        .button {  
+            background-color: #3b8122;  
+            color: white;  
+            padding: 10px 15px;  
+            text-decoration: none;  
+            border-radius: 5px;  
+            transition: background-color 0.3s;  
+        }  
+        .button:hover {  
+            background-color: #a8e6cf;  
+            color: black;  
+        }  
+        footer {  
+              text-align: center;  
+            padding: 10px 0;  
+            background: #3b8122;  
+            color: white;  
+            position: relative;  
+            bottom: 0;  
+            width: 100%;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+<header>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        &nbsp;&nbsp;<img src="Imagenes/Logo.jpg" alt="Logo Agrocomercial" class="logo" style="margin-right: auto;">
+        <h1 style="flex: 1; text-align: center; margin: 0;">Maquinaria Agrícola</h1>
+    </div>
+    <nav> 
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="maquinaria.html" class="active">Maquinaria Agrícola</a>  
+        <a href="servicios.html">Servicios</a>  
+        <a href="contacto.html">Contacto</a>    
+    </nav>  
+</header>  
+
+<section>  
+    <section>
+    <h2 style="width: 100%; text-align: center;">Nuestra Maquinaria</h2>
+    
+    <div class="product">  
+        <h3>Tractor 4x4</h3>  
+        <img src="Imagenes/Tractor4x4.jpg" alt="Tractor 4x4">  
+        <p>Precio: L 1,500 por día</p>  
+        <p>Ideal para trabajos de campo exigentes, con potencia y maniobrabilidad.</p>  
+        <a href="alquilar.html?producto=Tractor%204x4&costo=1500" class="button">Alquilar</a>  
+    </div>  
+
+    <div class="product">  
+        <h3>Sembradora</h3>  
+        <img src="Imagenes/sembradora.jpg" alt="Sembradora">  
+        <p>Precio: L 1,200 por día</p>  
+        <p>Proporciona una siembra eficiente y precisa en diferentes tipos de terreno.</p>  
+        <a href="alquilar.html?producto=Sembradora&costo=1200" class="button">Alquilar</a>  
+    </div>  
+
+    <div class="product">  
+        <h3>Motocultor</h3>  
+        <img src="Imagenes/motocultor.jpg" alt="Motocultor">  
+        <p>Excelente para trabajos en huertos y cultivos pequeños.</p>  
+        <p>Precio: L 900 por día</p>  
+        <a href="alquilar.html?producto=Motocultor&costo=900" class="button">Alquilar</a>  
+    </div>   
+    
+     <div class="product">  
+        <h3>Camion Carguero</h3>  
+        <img src="Imagenes/Camion Carguero.jpg" alt="Tractor de Oruga">  
+        <p>Ideal para transportar productos de fruta.</p>  
+        <p>Precio: L 3,500 por día</p>  
+        <a href="alquilar.html?producto=Camion%20Carguero&costo=3500" class="button">Alquilar</a>  
+    </div>
+    
+    <div class="product">  
+        <h3>Desmalezadora</h3>  
+        <img src="Imagenes/Desmalezadora.jpg" alt="Tractor de Oruga">  
+        <p>Elimina maleza y vegetacion no deseada de manera eficaz.</p>  
+        <p>Precio: L 600 por día</p>  
+        <a href="alquilar.html?producto=Desmalezadora&costo=600" class="button">Alquilar</a>  
+    </div>  
+    
+    <div class="product">  
+        <h3>Motosierra</h3>  
+        <img src="Imagenes/Motosierra-MS230.jpg" alt="Tractor de Oruga">  
+        <p>Eficaz para cortar arboles y madera.</p>  
+        <p>Precio: L 600 por día</p>  
+        <a href="alquilar.html?producto=Motosierra&costo=600" class="button">Alquilar</a>  
+    </div>  
+</section>  
+
+<footer>  
+    <p>&copy; 2024 Agrocomercial Vangromi´S.</p>  
+</footer>  
+
+</body>  
+</html>

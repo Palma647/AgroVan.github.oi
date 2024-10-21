@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #3b8122;
+            color: white;
+            padding: 10px 0;
+			text-align:; 
+        }
+		.logo {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+    border-radius: 10px; /* Redondear las esquinas */
+}
+
+       nav {
+    margin-top: 10px; /* Espacio entre el logo y la navegación */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50px; /* Ovalo */
+    transition: background-color 0.3s; /* Suaviza el cambio de color */
+}
+
+
+nav a.active {  
+    background-color: #a8e6cf; /* Color verde claro */
+    color: black; /* Color del texto */
+}
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .search-container {
+    display: flex;
+    justify-content:;
+    padding: 10px;
+    margin-top: 20px; /* Ajusta esta línea para bajar la barra de búsqueda */
+}
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            transition: border-color 0.3s;
+            font-size: 16px;
+        }
+        .search-container input[type="text"]:focus {
+            border-color: #3b8122;
+            outline: none;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            background: #3b8122;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.3s;
+        }
+        .search-container button:hover {
+            background: #2a6e19;
+        }
+        section {
+            padding: 20px;
+            background: white;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        
+        .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra los productos */
+    background-color: rgba(144, 238, 144, 0.5); /* Fondo verde claro */
+    padding: 20px; /* Espaciado alrededor del contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.product {
+    background-color: rgba(144, 238, 144, 0.5); /* Mismo color de fondo que el contenedor */
+    border: 2px solid #333; /* Línea más gruesa y de color negro */
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px; /* Mantiene el ancho de los productos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+        .product img {
+    max-width: 70px;
+    margin-bottom: 10px;
+    border: 2px solid #333; /* Contorno negro */
+    border-radius: 5px; /* Bordes redondeados para el contorno */
+}
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
+        .actions button {
+            background: #3b8122;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .actions button:hover {
+            background: #2a6e19;
+        }
+		.discount-button {
+    background-color: #a8e6cf; /* Color para destacar */
+    color: black; /* Texto negro */
+    padding: 8px 20px; /* Espaciado interno más pequeño */
+    border-radius: 25px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    margin-left: 10px; /* Reducir el espaciado hacia la izquierda */
+    margin-top: 10px; /* Espaciado superior para separarlo del borde */
+    transition: background-color 0.3s, transform 0.3s; /* Suaviza la transición de color y agrega efecto de escala */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto elevado */
+}
+
+
+.discount-button:hover {
+    background-color: #ff9900; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de escalado al pasar el ratón */
+}
+
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #3b8122;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>Productos - Agrocomercial</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Puedes usar el mismo CSS -->
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        &nbsp;&nbsp;<img src="Imagenes/Logo.jpg" alt="Logo Agrocomercial" width="85" height="79" class="logo" style="margin-right: auto;">
+        <h1 style="flex: 1; text-align: center; margin: 0;">Productos</h1>
+        <a href="productosdescuento.html" class="discount-button" >Ver Ofertas</a>
+    </div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="maquinaria.html">Maquinaria Agrícola</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar Productos y Más...">
+        <button onclick="searchProducts()">Buscar</button>
+    </div>
+</header>
+
+<section>
+    <h2>Productos</h2>
+    
+    <!-- Estilo para diseño en cuadrícula -->
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(144, 238, 144, 0.5); /* Verde pastel con transparencia */
+}
+
+header {
+    background: #3b8122;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+    border-radius: 10px; /* Redondear las esquinas */
+}
+
+nav {
+    margin-top: 10px; /* Espacio entre el logo y la navegación */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50px; /* Ovalo */
+    transition: background-color 0.3s; /* Suaviza el cambio de color */
+}
+
+nav a.active {  
+    background-color: #a8e6cf; /* Color verde claro */
+    color: black; /* Color del texto */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    transition: border-color 0.3s;
+    font-size: 16px;
+}
+
+.search-container input[type="text"]:focus {
+    border-color: #3b8122;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background: #3b8122;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+.search-container button:hover {
+    background: #2a6e19;
+}
+
+section {
+    padding: 20px;
+    background: white;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    background-color: rgba(144, 238, 144, 0.5); /* Verde pastel con transparencia */
+    padding: 20px; /* Agrega un poco de padding */
+    border-radius: 5px; /* Opcional: añade bordes redondeados */
+    margin-left: 0; /* Ajusta este valor para mover más a la izquierda */
+}
+
+.product {
+    background-color: rgba(144, 238, 144, 0.5); /* Verde claro con transparencia */
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 0 0.25px #333; /* Grosor reducido */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    margin: 0 5px; /* Ajustar margen a ambos lados */
+    justify-content: center; /* Centra los contenidos verticalmente */
+}
+
+.product h3, .product p {
+    margin: 5px 0; 
+    text-align: center; 
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px; /* Reduce el espacio entre el botón y el cuadro de cantidades */
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-container input {
+    width: 50px;
+    margin-right: 5px; /* Ajuste fino del espacio */
+    text-align: center;
+}
+
+.buy-button {
+    width: auto; /* Ajusta el ancho según el contenido */
+    background: #3b8122;
+    color: white;
+    border: none;
+    padding: 10px; /* Aumentar el padding para un tamaño uniforme */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background: #2a6e19;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #3b8122;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+</style>
+
+     <h3>Semillas</h3>
+ <div class="products-grid">
+        <div class="product" data-name="Semillas de maíz" data-price="15">
+            <img src="Imagenes/Maiz.png" alt="Semillas de maíz">
+            <h3>Semillas de maíz</h3>
+            <p>Precio:15 Lps (libra)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Semillas de Maíz', 15, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    
+    <div class="product">
+        <img src="Imagenes/frijoles.jpg" alt="Semillas de frijol">
+        <h3>Semillas de frijol</h3>
+        <p>Precio:14 Lps (Libra)</p>
+        <div class="actions">
+            <input type="number" class="quantity-input" min="1" value="1">
+             <a href="#" onclick="buyProduct('Semillas de Frijol', 14, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    
+    
+    <div class="product">
+        <img src="Imagenes/Girasol1jpg.jpg" alt="Semillas de girasol">
+            <h3>Semillas de Girasol</h3>
+            <p>Precio:60 Lps (Libra)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Semillas de Girasol', 60, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+       
+       
+        
+        </div>
+    <div class="product">
+     <img src="Imagenes/tomate.jpg" alt="Semillas de tomate">
+            <h3>Semillas de Tomate</h3>
+            <p>Precio:200 Lps (libra)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Semillas de Tomate', 200, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+        </div>
+       
+    
+    <div class="product">
+         <img src="Imagenes/Zanahoria.jpeg" alt="Semillas de Zanahoria">
+            <h3>Semillas de Zanahoria</h3>
+            <p>Precio:60 Lps (Libra)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Semillas de Zanahoria', 60, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+</div>
+    
+  <!-- Productos Químicos -->
+    <h3>Productos Químicos</h3>
+    <div class="products-grid">
+        <div class="product">
+             <img src="Imagenes/herbicida.jpeg" alt="herbicidas">
+            <h3>Herbicidas</h3>
+            <p>Precio:550 Lps (500ml)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Herbicidas', 550, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+        </div>
+        <div class="product">
+           <img src="Imagenes/insecticida.png" alt="insecticidas">
+            <h3>Insecticidas</h3>
+            <p>Precio:200 Lps (500ml)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Insecticidas', 200, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+             <img src="Imagenes/acaricida.png" alt="acaricidas">
+            <h3>Acaricidas</h3>
+            <p>Precio:400 Lps (1Lt)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Acaricidas', 400, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+             <img src="Imagenes/regulador de crecimientowebp.webp" alt="reguladores de crecimiento">
+            <h3>Reguladores de Crecimiento</h3>
+            <p>Precio:650 Lps (1Lt)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Reguladores de Crecimiento', 650, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+             <img src="Imagenes/Corrector de Carencia.jpg"alt="correctores de carencia">
+            <h3>Correctores de Carencia</h3>
+            <p>Precio:2000 Lps (5Lt)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Correctores de Carencia', 2000, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insumos -->
+    <h3>Insumos</h3>
+    <div class="products-grid">
+        <div class="product">
+             <img src="Imagenes/Abono.jpeg" alt="abono organico">
+            <h3>Abono Organico</h3>
+            <p>Precio:500 Lps (50kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Abono Organico', 500, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="Imagenes/Cala.jpg" alt="cal agricola">
+            <h3>Cal Agricola</h3>
+            <p>Precio:350 Lps (50kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Cal Agricola', 350, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+             <img src="Imagenes/Ino.jpeg" alt="fertilizantes inorganicos">
+            <h3>Fertilizantes Inorganicos</h3>
+            <p>Precio:150 Lps (2,5kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Fertilizantes Inorganicos', 150, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+        </div>
+        <div class="product">
+             <img src="Imagenes/tierra.webp" alt="tierra mejorada">
+            <h3>Tierra Mejorada</h3>
+            <p>Precio:70 Lps (2kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Tierra Mejorada', 70, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="Imagenes/sustrato-universal-verdecora-5.jpg" alt="sustratos">
+            <h3>Sustratos</h3>
+            <p>Precio:400 Lps (25Lt)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Sustratos', 400, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alimentos para Ganado -->
+    <h3>Alimentos para Ganado</h3>
+    <div class="products-grid">
+        <div class="product">
+            <img src="Imagenes/bovi.jpeg" alt="alimento para ganado bovino" width="89" height="89">
+            <h3>Alimento para Ganado Bovino</h3>
+            <p>Precio:500 Lps (40kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Alimento para Ganado Bovino', 500, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+          <img src="Imagenes/caballin.jpg" alt="concentrado para caballos">
+            <h3>Concentrado para Caballos</h3>
+            <p>Precio:900 Lps (20kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+              <a href="#" onclick="buyProduct('Cocentrado para Caballos', 900, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+        </div>
+        <div class="product">
+          <img src="Imagenes/pollo.jpg"alt="alimento para pollos">
+            <h3>Alimento para Pollo</h3>
+            <p>Precio:850 Lps (40kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+              <a href="#" onclick="buyProduct('Alimento para Pollo', 850, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+      </div>
+        <div class="product">
+          <img src="Imagenes/oveja.jpg" alt="alimentos para ovejas" width="68" height="86">
+            <h3>Alimentos para Ovejas</h3>
+          <p>Precio:800 Lps (40kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+              <a href="#" onclick="buyProduct('Alimentos para Ovejas', 800, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+          <img src="Imagenes/SAL.jpeg" alt="sal mineralizada" width="96" height="94">
+            <h3>Sal Mineralizada</h3>
+            <p>Precio:200 Lps (5Kg)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Sal Mineralizada', 200, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Equipos de Riego -->
+    <h3>Equipos de Riego</h3>
+    <div class="products-grid">
+        <div class="product">
+             <img src="Imagenes/bombaRiego.jpg" alt="bombas de riego">
+            <h3>Bombas de Riego</h3>
+            <p>Precio:5,000 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Bombas de Riego', 5000, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+             <img src="Imagenes/Tuberia.jpeg"alt="tuberia de riego">
+            <h3>Tuberia de Riego</h3>
+            <p>Precio:3,000 Lps (100m) </p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Tuberia de Riego', 3000, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+        </div>
+        <div class="product">
+             <img src="Imagenes/controlador.jpg" alt="controlador de riego">
+            <h3>Controlador de Riego</h3>
+            <p>Precio:2,000 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Controlador de Riego', 2000, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="Imagenes/cañon.jpg" alt="cañon de riego">
+            <h3>Cañon de Riego</h3>
+            <p>Precio:25,000 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Cañon de Riego', 25000, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+        <div class="product">
+             <img src="Imagenes/contolador de impacto.jpeg" alt="aspersores de impacto">
+            <h3>Aspersores de Impacto</h3>
+            <p>Precio:1,500 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Aspersores de Impacto', 1500, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+   
+<!-- Otros Insumos -->
+<h3>Otros Insumos</h3>
+<div class="products-grid">
+    <div class="product">
+         <img src="Imagenes/pinturas.jpeg" alt="pinturas">
+            <h3>Pinturas</h3>
+            <p>Precio:625 Lps (1g)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Pinturas', 625, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    <div class="product">
+         <img src="Imagenes/clavos.jpeg" alt="clavos">
+            <h3>Clavos</h3>
+            <p>Precio:30 Lps (Libra)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Clavos', 30, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+        </div>
+    <div class="product">
+         <img src="Imagenes/metro.jpg" alt="cinta metrica">
+            <h3>Cinta Metrica</h3>
+            <p>Precio:120 Lps (5m)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Cinta Metrica', 120, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    <div class="product">
+         <img src="Imagenes/OIP (1).jpeg" alt="brochas">
+            <h3>Brochas</h3>
+            <p>Precio:35 Lps (3Pulg.)</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Brochas', 35, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    <div class="product">
+         <img src="Imagenes/guantes.jpeg" alt="guantes de trabajo">
+            <h3>Guantes de Trabajo</h3>
+            <p>Precio:100 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Guantes de Trabajo', 100, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+</div>
+<!-- Equipos de Protección Personal -->
+<h3>Equipos de Protección Personal</h3>
+<div class="products-grid">
+    <div class="product">
+      <img src='Imagenes/casco.jpeg' alt="cascos de seguridad">
+            <h3>Cascos de Seguridad</h3>
+            <p>Precio:200 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Cascos de Seguridad', 200, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>  
+    <div class="product">
+       <img src="Imagenes/gafas.jpg" alt="gafas de seguridad">
+            <h3>Gafas de Seguridad</h3>
+            <p>Precio:70 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Gafas de Seguridad', 70, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        
+        </div>
+    <div class="product">
+        <img src="Imagenes/auditivos.jpeg" alt="protectores auditivos">
+            <h3>Protectores Auditivos</h3>
+            <p>Precio:200 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Protectores Auditivos', 200, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    <div class="product">
+       <img src="Imagenes/seguridad.jpeg" alt="guantes de seguridad">
+            <h3>Guantes de Seguridad</h3>
+            <p>Precio:300 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Guantes de Seguridad', 300, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    <div class="product">
+        <img src="Imagenes/botas.jpeg" alt="botas de hule">
+            <h3>Botas de Hule</h3>
+            <p>Precio:250 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Botas de Hule', 250, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+</div>
+
+<!-- Otros Productos -->
+<h3>Otros Productos</h3>
+<div class="products-grid">
+    <div class="product">
+        <img src="Imagenes/sellador.jpeg" alt="sellador" width="83" height="89">
+            <h3>Sellador</h3>
+            <p>Precio:350 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Sellador', 350, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+    </div>
+    <div class="product">
+        <img src="Imagenes/cinta.jpeg" alt="cinta aislante">
+            <h3>Cinta Aislante</h3>
+            <p>Precio:35 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Cinta Aislante', 35, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    <div class="product">
+        <img src="Imagenes/pegamento.jpg" alt="pegamento" width="80" height="91">
+            <h3>Pegamento</h3>
+            <p>Precio:200 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Pegamento', 200, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+       
+        </div>
+    <div class="product">
+       <img src="Imagenes/grapadora.jpg" alt="grapadoras">
+            <h3>Grapadoras</h3>
+            <p>Precio:150 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Grapadoras', 150, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    <div class="product">
+       <img src="Imagenes/teflon.jpeg" alt="cinta teflon">
+            <h3>Cinta Teflon</h3>
+            <p>Precio:25 Lps</p>
+            <div class="actions">
+                <input type="number" class="quantity-input" min="1" value="1">
+                <a href="#" onclick="buyProduct('Cinta Teflon', 25, this.parentNode.querySelector('.quantity-input').value)">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+</div>
+
+</section>
+
+
+        <!-- Añadir más productos siguiendo el mismo formato -->
+    </div>
+</section>
+<footer>
+<nav>  
+       </section>
+      
+</section>  
+
+<footer>  
+    <p>&copy;2024 Agrocomercial Vangromi´S.</p>  
+</footer>  
+<script>
+    function buyProduct(productName, price, quantity) {
+        const url = `formulario_compra.html?product=${encodeURIComponent(productName)}&price=${price}&quantity=${quantity}`;
+        window.location.href = url;
+    }
+</script>
+<script>  
+    function searchProducts() {  
+        const input = document.getElementById('search').value.toLowerCase();  
+        const products = document.querySelectorAll('.product');  
+        
+        products.forEach(product => {  
+            const productName = product.querySelector('h3').textContent.toLowerCase();  
+            // Muestra el producto si coincide y oculta si no coincide  
+            product.style.display = productName.includes(input) ? 'flex' : 'none';  
+        });  
+    }  
+</script> 
+</body>  
+</html>

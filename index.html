@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Imagenes/Fondo%20de%20Iniciojpg.jpg'); /* Imagen de fondo */
+            background-size: cover; /* Asegura que cubre toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que se repita */
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .button {
+            background: none; /* Elimina el color de fondo */
+            color: white; /* Mantiene el texto en blanco */
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none; /* Elimina el borde */
+            text-decoration: none;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px; /* Coloca el botón en la parte inferior */
+        }
+    body {
+	background-image: url(Imagenes/fondo%20del%20Inicio.jpg);
+}
+    </style>
+</head>
+<body>
+
+<a href="inicio.html" class="button"><h2>Ir al Inicio</h2></a> <!-- Botón en la parte inferior -->
+
+<!-- Script para redirigir automáticamente a index.html después de 5 segundos -->
+<script>
+    setTimeout(function() {
+        window.location.href = "index.html"; // Redirige al index.html
+    }, 5000); // Tiempo en milisegundos (5000 = 5 segundos)
+</script>
+
+</body>
+</html>
+

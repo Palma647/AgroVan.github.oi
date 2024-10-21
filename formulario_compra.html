@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compra - Agrocomercial</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3b8122;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #2a6e19;
+        }
+        .hidden {
+            display: none;
+        }
+        .payment-options {
+            display: flex;
+            justify-content: space-between;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex: 1;
+            margin-right: 10px;
+        }
+        .payment-option img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Formulario de Compra</h2>
+<p id="currentDate"></p>
+<form id="purchaseForm" method="POST" action="procesar_compra.php">
+    <label for="buyerName">Nombre del Comprador:</label>
+    <input type="text" id="buyerName" name="buyerName" required>
+    
+    <label for="productName">Producto:</label>
+    <input type="text" id="productName" name="productName" readonly>
+
+    <label for="quantity">Cantidad:</label>
+    <input type="number" id="quantity" name="quantity" readonly>
+    
+    <label for="totalPrice">Precio Total:</label>
+    <input type="text" id="totalPrice" name="totalPrice" readonly>
+    
+    <label for="paymentMethod">Método de Pago:</label>
+    <div class="payment-options">
+        <div class="payment-option">
+            <input type="radio" id="tarjeta" name="paymentMethod" value="tarjeta" required onchange="toggleInputs()">
+            <label for="tarjeta">
+                <img src="https://cdn-icons-png.flaticon.com/512/217/217425.png" alt="Tarjeta">
+                Tarjeta de Crédito
+            </label>
+        </div>
+        <div class="payment-option">
+            <input type="radio" id="paypal" name="paymentMethod" value="paypal" required onchange="toggleInputs()">
+            <label for="paypal">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal">
+                PayPal        
+            </label>
+        </div>
+        <div class="payment-option">
+            <input type="radio" id="efectivo" name="paymentMethod" value="efectivo" required onchange="toggleInputs()">
+            <label for="efectivo">
+                <img src="https://cdn-icons-png.flaticon.com/512/189/189715.png" alt="Efectivo">
+                Efectivo
+            </label>
+        </div>
+        <div class="payment-option">
+            <input type="radio" id="transferencia" name="paymentMethod" value="transferencia" required onchange="toggleInputs()">
+            <label for="transferencia">
+                <img src="https://cdn-icons-png.flaticon.com/512/1377/1377250.png" alt="Transferencia">
+                Transferencia Bancaria
+            </label>
+        </div>
+    </div>
+    
+    <div id="cardInput" class="hidden">
+        <label for="cardId">ID de la Tarjeta:</label>
+        <select id="cardType" name="cardType">
+            <option value="">Seleccione</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+        </select>
+        <input type="text" id="cardId" name="cardId" placeholder="Número de tarjeta">
+    </div>
+
+    <div id="paypalInput" class="hidden">
+        <label for="paypalEmail">Correo de PayPal:</label>
+        <input type="email" id="paypalEmail" name="paypalEmail" placeholder="Correo electrónico de PayPal">
+    </div>
+
+    <div id="transferInput" class="hidden">
+        <label for="transferApp">Aplicación de Transferencia:</label>
+        <select id="transferApp" name="transferApp">
+            <option value="">Seleccione</option>
+            <option value="bancatlán">Bancatlán</option>
+            <option value="ficohsa">Ficohsa</option>
+            <option value="cabin">Cabin</option>
+            <option value="banco_atlántida">Banco Atlántida</option>
+            <option value="tigo_money">Tigo Money</option>
+            <option value="movistar">Movistar</option>
+        </select>
+        
+        <label for="transferCardId">Número de Tarjeta (Opcional):</label>
+        <input type="text" id="transferCardId" name="transferCardId" placeholder="Número de tarjeta para transferencia">
+    </div>
+
+    <button type="submit">Confirmar Compra</button>
+    <button type="button" onclick="window.history.back()">Cancelar</button>
+</form>
+
+<script>
+    // Obtener los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('product');
+    const productPrice = parseFloat(urlParams.get('price'));
+    const quantity = parseInt(urlParams.get('quantity')) || 1;
+
+    // Rellenar el formulario con los datos del producto
+    document.getElementById('productName').value = productName;
+    document.getElementById('quantity').value = quantity;
+
+    // Calcular el precio total
+    const totalPrice = productPrice * quantity;
+    document.getElementById('totalPrice').value = `L ${totalPrice.toFixed(2)}`;
+
+    // Mostrar la fecha actual
+    const today = new Date();
+    document.getElementById('currentDate').textContent = `Fecha: ${today.toLocaleDateString()}`;
+
+    function toggleInputs() {
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+        const cardInput = document.getElementById('cardInput');
+        const transferInput = document.getElementById('transferInput');
+        const paypalInput = document.getElementById('paypalInput');
+        
+        cardInput.classList.toggle('hidden', paymentMethod !== 'tarjeta');
+        transferInput.classList.toggle('hidden', paymentMethod !== 'transferencia');
+        paypalInput.classList.toggle('hidden', paymentMethod !== 'paypal');
+    }
+</script>
+
+</body>
+</html>
